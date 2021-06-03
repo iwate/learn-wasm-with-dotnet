@@ -1,0 +1,9 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Iwate.WasmtimeChallenge";
+
+package greet;
+
+message Hello {
+  string message = 1;
+}
