@@ -1,3 +1,3 @@
-# dotnet and wasm communicate via protobuf
+# dotnet use wasm made by rust
 
-https://blog.iwate.me/25959/learning-wasm-2
+https://blog.iwate.me/25959/learning-wasm-3
