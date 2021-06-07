@@ -7,23 +7,18 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Google.Protobuf" Version="3.17.2" />
-		<PackageReference Include="Grpc.Net.Client" Version="2.37.0" />
-		<PackageReference Include="Grpc.Tools" Version="2.38.0">
-		  <PrivateAssets>all</PrivateAssets>
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
 		<PackageReference Include="Wasmtime" Version="0.27.0-preview1" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Protobuf Include="Protos\greet.proto" GrpcServices="Client" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Update="memory.wat">
+	  <None Update="challenge02.wasm">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
 	</ItemGroup>
+
+	<Target Name="RustBuild" BeforeTargets="Build">
+		<Exec WorkingDirectory="../rust" Command="cargo build --target=wasm32-unknown-unknown --release" />
+		<Copy SourceFiles="../rust/target/wasm32-unknown-unknown/release/challenge02.wasm" DestinationFiles="./challenge02.wasm" />
+	</Target>
 
 </Project>
