@@ -1,3 +1,3 @@
-# dotnet use wasm made by rust
+# dotnet run the wasm which generate from rust
 
-https://blog.iwate.me/25959/learning-wasm-3
+https://blog.iwate.me/26013/learning-wasm-3
