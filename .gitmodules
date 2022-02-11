@@ -1,3 +1,4 @@
-[submodule "lib/quickjs"]
-	path = lib/quickjs
-	url = https://github.com/bellard/quickjs.git
+
+[submodule "challenge05/c/wasi-lab"]
+	path = challenge05/c/wasi-lab
+	url = https://github.com/iwate/wasi-lab.git
