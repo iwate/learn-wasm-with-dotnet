@@ -11,7 +11,6 @@ namespace Iwate.Challenge05
         static void Main(string[] args)
         {
             var dir = AppDomain.CurrentDomain.BaseDirectory;
-            var scriptArg = "{\"id\":100,\"name\":\"iwate\"}";
             var script =
 @"
 import * as host from 'host';
@@ -34,7 +33,7 @@ host.hello();
                 .WithInheritedStandardOutput()
                 .WithInheritedStandardError()
                 .WithPreopenedDirectory(dir, ".")
-                .WithArgs("--", "-m", "--std", "main.js", scriptArg));
+                .WithArgs("--", "-m", "--std", "main.js"));
 
             var instance = linker.Instantiate(store, module);
 
